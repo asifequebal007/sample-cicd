@@ -1,0 +1,14 @@
+name: System Info Checker          # This is the GITHUB_WORKFLOW
+
+on: [push, pull_request]           # Triggers for the event
+
+jobs:
+  display-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Repository Details
+        run: |
+          echo "Processing repository: $GITHUB_REPOSITORY"
+          echo "Triggered by branch/tag: $GITHUB_REF"
+          echo "Executing workflow: $GITHUB_WORKFLOW"
+          echo "Current action ID: $GITHUB_ACTION"
